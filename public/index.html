@@ -101,7 +101,15 @@ function sv(nm,nx,ny){
   .catch(err => {alert('newerr'+err)} )
 }       
   
-    
+function mg(){
+    const opt={ method: 'GET',
+               headers: { "Content-Type": "application/json", },
+              }
+    fetch("/getenv", opt)
+          .then( response => response.json() )
+          .then( response => { alert("response.msg")} )
+          .catch( err => { alert("Error="+err) } )
+ }    
            
 ct1.font="32px Arial"
     if(name=='Admin'){setTimeout(ky,1000)
@@ -110,7 +118,7 @@ ct1.font="32px Arial"
  else{ run() }
 
 function admin(){
-  var deln=prompt('d delete, a add')
+  var deln=prompt('d delete, a add, e env')
   if(deln=='d'){dl(0)}
   if(deln=='a'){
     const nadd=prompt('Name')
@@ -118,7 +126,7 @@ function admin(){
     const yadd=prompt('Y')
     sv(nadd,xadd,yadd)
     }
-    
+  if(deln=="e"){ mg() }  
   }
   
 function run(){
