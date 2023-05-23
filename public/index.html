@@ -107,7 +107,7 @@ function mg(){
               }
     fetch("/getenv", opt)
           .then( response => response.json() )
-          .then( response => { alert("response.msg")} )
+          .then( response => { alert(response.msg)} )
           .catch( err => { alert("Error="+err) } )
  }    
            
@@ -118,7 +118,7 @@ ct1.font="32px Arial"
  else{ run() }
 
 function admin(){
-  var deln=prompt('d delete, a add, e env')
+  var deln=prompt('d delete, a add, 4e env')
   if(deln=='d'){dl(0)}
   if(deln=='a'){
     const nadd=prompt('Name')
