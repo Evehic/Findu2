@@ -22,7 +22,7 @@
       ct2.drawImage(img,0,0,1000,600)
       }
     img.src="world1.jpg"
-var name=prompt("Enter name")
+var name
 var xp,yp, namlen=0
 var names=[]
 var proc, d=0,ups=0
@@ -112,10 +112,14 @@ function mg(){
  }    
            
 ct1.font="32px Arial"
+setTimeout(enterName,400)  
+ function enterName(){
+   name=prompt("Enter name")
     if(name=='Admin'){setTimeout(ky,1000)
                       setTimeout(admin,3000)
                       }
  else{ run() }
+}
 
 function admin(){
   var deln=prompt('d delete, a add, 5e env')
